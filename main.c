@@ -7,11 +7,11 @@ int main(void)
   int points_length = 5;
   struct Point current_location = {18,86};
   struct Point *closest_food_location = NULL;
-  for (int i = 0; i < 5; i++)
-  {
-    printf("%d %d\n",food_points[i].x,food_points[i].y);
-  }
-  
-
+  // for (int i = 0; i < 5; i++)
+  // {
+  //   printf("%d %d\n",food_points[i].x,food_points[i].y);
+  // }
+  closest_food_location = get_closest_food( food_points,  points_length,current_location, closest_food_location);
+  printf("%d %d",closest_food_location->x, closest_food_location->y);
   return 0;
 }
