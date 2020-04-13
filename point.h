@@ -13,6 +13,8 @@ Location of organism: [10 94],  Closest food target : [18 76]
 Location of organism: [36 27],  Closest food target : [55 38]
 */
 #define ZERO 0
+#define FOR_EACH_POINT_IN_FOOD_POINTS for (int i = ZERO; i < points_length; i++)
+#define POINT food_points[i]
 
 struct Point
 {
