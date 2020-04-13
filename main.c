@@ -7,6 +7,7 @@ int main(void)
   struct Point current_location = {18,86};
   struct Point closest_food_location = {0,0};
   get_closest_food( food_points,  points_length,current_location, &closest_food_location);
-  printf("%d %d\n",closest_food_location.x, closest_food_location.y);
+  printf("Location of organism: [%d %d],\t",current_location.x, current_location.y);
+  printf("Closest food target : [%d %d]\n",closest_food_location.x, closest_food_location.y);
   return 0;
 }
