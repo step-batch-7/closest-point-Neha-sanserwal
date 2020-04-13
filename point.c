@@ -1,5 +1,5 @@
-#include "point.h"
 #include <limits.h>
+#include "point.h"
 
 double get_pow_of_diff(int value1, int value2 ){
   double diff = value1-value2;
@@ -14,15 +14,18 @@ double find_distance(struct Point food_points,struct Point current_location){
 
 
 void get_closest_food(struct Point food_points[], int points_length, struct Point current_location, struct Point *closest_food_location){
-  double min_distance = find_distance(food_points[ZERO],current_location);;
+  double min_distance = find_distance(food_points[ZERO],current_location);
   double distance = ZERO;
+  closest_food_location->x = food_points[ZERO].x;
+  closest_food_location->y = food_points[ZERO].y;
 
   FOR_EACH_POINT_IN_FOOD_POINTS{
     distance = find_distance(POINT,current_location);
 
-    if(distance <= min_distance){
+    if(distance < min_distance){
       closest_food_location->x = POINT.x;
       closest_food_location->y = POINT.y;
+      min_distance = distance;
     }
   }
 }
