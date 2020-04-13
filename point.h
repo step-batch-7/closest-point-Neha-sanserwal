@@ -12,9 +12,13 @@ Location of organism: [69 7],   Closest food target : [55 38]
 Location of organism: [10 94],  Closest food target : [18 76]
 Location of organism: [36 27],  Closest food target : [55 38]
 */
+
+#include <math.h>
+
 #define ZERO 0
 #define FOR_EACH_POINT_IN_FOOD_POINTS for (int i = ZERO; i < points_length; i++)
 #define POINT food_points[i]
+#define SQUARE_OF_DIFF pow(diff,2)
 
 struct Point
 {
@@ -24,3 +28,4 @@ struct Point
 
 void get_closest_food(struct Point food_points[], int points_length, struct Point current_location, struct Point *closest_food_location);
 double find_distance(struct Point food_points,struct Point current_location);
+double get_pow_of_diff(int value1, int value2 );
