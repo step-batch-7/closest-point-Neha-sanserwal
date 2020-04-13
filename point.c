@@ -1,18 +1,21 @@
 #include "point.h"
+#include <limits.h>
 
 double find_distance(struct Point food_points,struct Point current_location){
-  return ZERO;
+  double diff_of_x = food_points.x-current_location.x;
+  double diff_of_y = food_points.y-current_location.y;
+  return pow(diff_of_x,2)+pow(diff_of_y,2);
 }
 
 
 void get_closest_food(struct Point food_points[], int points_length, struct Point current_location, struct Point *closest_food_location){
-  double min_distance = __DBL_HAS_INFINITY__;
+  double min_distance = find_distance(food_points[ZERO],current_location);;
   double distance = ZERO;
 
   FOR_EACH_POINT_IN_FOOD_POINTS{
     distance = find_distance(POINT,current_location);
-
-    if(distance < min_distance){
+    if(distance <= min_distance){
+      
       closest_food_location->x = POINT.x;
       closest_food_location->y = POINT.y;
     }

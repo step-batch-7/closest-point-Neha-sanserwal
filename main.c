@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "point.h"
-
+#include <math.h>
 int main(void)
 {
   struct Point food_points[] = {{18 , 76},{19 ,66}, {89, 57}, {9 ,71}, {55, 38},};
