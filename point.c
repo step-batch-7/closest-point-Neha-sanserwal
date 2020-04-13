@@ -7,9 +7,9 @@ double get_pow_of_diff(int value1, int value2 ){
 }
 
 double find_distance(struct Point food_points,struct Point current_location){
-  double diff_of_x = food_points.x-current_location.x;
-  double diff_of_y = food_points.y-current_location.y;
-  return pow(diff_of_x,2)+pow(diff_of_y,2);
+  double pow_of_x_diff = get_pow_of_diff(food_points.x, current_location.x);
+  double pow_of_y_diff = get_pow_of_diff(food_points.y, current_location.y);
+  return pow_of_x_diff+ pow_of_y_diff;
 }
 
 
