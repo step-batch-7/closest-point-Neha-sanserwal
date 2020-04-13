@@ -19,6 +19,9 @@ Location of organism: [36 27],  Closest food target : [55 38]
 #define FOR_EACH_POINT_IN_FOOD_POINTS for (int i = ZERO; i < points_length; i++)
 #define POINT food_points[i]
 #define SQUARE_OF_DIFF pow(diff,2)
+#define POINT_TO_FOOD(pointer_for_organism , food ) \
+      pointer_for_organism->x = food.x;\
+      pointer_for_organism->y = food.y;
 typedef struct Point{
   int x;
   int y;

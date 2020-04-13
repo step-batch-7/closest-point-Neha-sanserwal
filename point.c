@@ -17,16 +17,13 @@ void get_closest_food(Point food_points[], int points_length, Point current_loca
   double distance =find_distance(food_points[ZERO],current_location);
   
   double min_distance = distance;
-  closest_food_location->x = food_points[ZERO].x;
-  closest_food_location->y = food_points[ZERO].y;
-
+  POINT_TO_FOOD(closest_food_location,food_points[0]);
   FOR_EACH_POINT_IN_FOOD_POINTS{
     distance = find_distance(POINT,current_location);
 
     if(distance < min_distance){
       min_distance = distance;
-      closest_food_location->x = POINT.x;
-      closest_food_location->y = POINT.y;
+      POINT_TO_FOOD(closest_food_location,POINT)
     }
   }
 }
